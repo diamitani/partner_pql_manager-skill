@@ -1,26 +1,18 @@
 ---
 name: partner-pql-manager
 description: >
-  {{COMPANY_NAME}} Partner PQL Workflow Manager. Use this skill whenever someone wants to build,
-  update, tune, or debug the Partner Qualified Lead (PQL) automation — the n8n workflow
-  that routes partner form submissions to Melissa's team. Also triggers when reviewing
-  AI classification accuracy, updating partner type definitions, generating test submissions,
-  auditing HubSpot partner contacts, or onboarding new partner types.
-  ALWAYS trigger on: "update the PQL workflow", "tune the partner classification", "test
-  the partner workflow", "add a new partner type", "check why a partner was misrouted",
-  "build the PQL workflow", "update Melissa's task", "partner form automation",
-  "pql prompt update", or any request touching the partner intake automation in n8n or HubSpot.
+  Enterprise Platform Partner PQL Workflow Manager. Use this skill whenever someone wants to build, update, tune, or debug the Partner Qualified Lead (PQL) automation — the n8n workflow that routes partner form submissions to Melissa's team. Also triggers when reviewing AI classification accuracy, updating partner type definitions, generating test submissions, auditing HubSpot partner contacts, or onboarding new partner types. ALWAYS trigger on: "update the PQL workflow", "tune the partner classification", "test the partner workflow", "add a new partner type", "check why a partner was misrouted", "build the PQL workflow", "update Melissa's task", "partner form automation", "pql prompt update", or any request touching the partner intake automation in n8n or HubSpot.
 ---
 
 # Partner PQL Workflow Manager
 
-This skill manages {{COMPANY_NAME}}'s Partner Qualified Lead (PQL) automation — the n8n workflow that intercepts partner form submissions, classifies them by type (Referral / Reseller / Alliance), routes valid leads to Melissa's HubSpot task queue, and generates partnership-specific follow-up emails.
+This skill manages Enterprise Platform's Partner Qualified Lead (PQL) automation — the n8n workflow that intercepts partner form submissions, classifies them by type (Referral / Reseller / Alliance), routes valid leads to Melissa's HubSpot task queue, and generates partnership-specific follow-up emails.
 
 ## Source Files
 
 All workflow files live at:
 ```
-{{USER_HOME}}/Documents/{{COMPANY_NAME}}/partner workflow automation/
+{{USER_HOME}}/Documents/Enterprise Platform/partner workflow automation/
 ├── Partner-PQL-Workflow.json          ← importable n8n workflow (main artifact)
 ├── Partner-PQL-Project-Brief.md       ← full project context + ownership matrix
 ├── Partner-PQL-Asana-Project.md       ← task breakdown for team
@@ -66,11 +58,11 @@ Webhook → AI Classify Partner Type → Code: Set PQL Data → IF Valid?
 
 | Type | HubSpot Value | Definition |
 |------|--------------|-----------|
-| **Referral Partner** | `referral_partner` | Mutual referral relationship — they refer business to {{COMPANY_NAME}} and/or {{COMPANY_NAME}} refers to them. Goal is gap-filling. Neither party is buying from the other. |
-| **Reseller Partner** | `reseller_partner` | Resells {{COMPANY_NAME}} EOR/payroll/compliance services to their own end clients. They become {{COMPANY_NAME}}'s direct client. Sometimes described as "white label." |
-| **Alliance Partner** | `alliance_partner` | Platform/ecosystem integrations — HRIS (BambooHR, Workday), ATS, payroll software, HR tech companies wanting a formal {{COMPANY_NAME}} integration. |
+| **Referral Partner** | `referral_partner` | Mutual referral relationship — they refer business to Enterprise Platform and/or Enterprise Platform refers to them. Goal is gap-filling. Neither party is buying from the other. |
+| **Reseller Partner** | `reseller_partner` | Resells Enterprise Platform EOR/payroll/compliance services to their own end clients. They become Enterprise Platform's direct client. Sometimes described as "white label." |
+| **Alliance Partner** | `alliance_partner` | Platform/ecosystem integrations — HRIS (BambooHR, Workday), ATS, payroll software, HR tech companies wanting a formal Enterprise Platform integration. |
 
-**Vendor Pitch (NOT a partner):** If someone is offering their own services TO {{COMPANY_NAME}} (staffing, marketing, SaaS, appointment setting, lead gen) — classify as General Enquiry, no task.
+**Vendor Pitch (NOT a partner):** If someone is offering their own services TO Enterprise Platform (staffing, marketing, SaaS, appointment setting, lead gen) — classify as General Enquiry, no task.
 
 ---
 
